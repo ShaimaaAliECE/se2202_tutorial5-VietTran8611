@@ -43,6 +43,7 @@
   
   button:disabled{
     background: inherit;
+    color: white;
   }
 
   #game-over-lbl{

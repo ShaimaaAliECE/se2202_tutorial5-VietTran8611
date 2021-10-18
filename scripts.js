@@ -33,7 +33,7 @@ for (let i=0; i<btns.length; i++)
 function takeCell(event)
 {
     event.target.innerText=nextPlayer;
-    event.target.style.color="white"
+    
     event.target.disabled="true";
     if(nextPlayer==='X'){
      nextPlayer="O";
