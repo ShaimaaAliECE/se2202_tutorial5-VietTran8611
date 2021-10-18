@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    
+  }
+  
+  body{
+    background-image: linear-gradient(#DE7433 , orange);
+   margin: 0;
+  }
+  
+  .text{
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  
+  .table{
+  text-align: center;
+  height: 100vh;
+  padding-top:20vh;
+  min-height: 100vh;
+  }
+  
+  table, td{
+    border: 2px solid black;
+  }
+  
+  table{
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+  }
+  
+  button{
+    background: inherit;
+    color:#DE7433 ;
+    font-weight: bolder;
+  }
+  
+  tr{
+    padding: 1em;
+  }
+  
+  button:disabled{
+    background: inherit;
+  }
+
+  #game-over-lbl{
+      font-size: 2rem;
+      color: white;
+  }
+
+  #next-lbl{
+      color: white;
+  }
+  
+  
