@@ -35,6 +35,7 @@
     background: inherit;
     color:#DE7433 ;
     font-weight: bolder;
+    cursor: pointer;
   }
   
   tr{
@@ -55,4 +56,33 @@
       color: white;
   }
   
+  #modal {
+    background-color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 200px;
+    position: relative;
+    top: 30%;
+  }
+
+  #overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
   
+
+  .inline-btn{
+    color: white;
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 5px;
+    background:blueviolet;
+  }

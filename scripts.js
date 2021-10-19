@@ -23,24 +23,29 @@ function createGameBoard()
 }
 
 // Programatically add 'takeCell' as an event listener to all the buttons on the board
+function btnArr(){
 let btns = document.querySelectorAll('button');
 for (let i=0; i<btns.length; i++)
-{
-    btns[i].addEventListener('click', (event) => { takeCell(event)}); 
+{  if(btns[i].id!="close-modal"&&btns[i].id!="play-again"&&btns[i].id!="reset"){
+    btns[i].addEventListener('click', (event) => { takeCell(event)});}
 }
+}
+btnArr()
 
 // This function will be used to respond to a click event on any of the board buttons.
 function takeCell(event)
 {
-    event.target.innerText=nextPlayer;
     
-    event.target.disabled="true";
-    if(nextPlayer==='X'){
-     nextPlayer="O";
-     
-     } else {nextPlayer="X";
-    }
-    document.getElementById("next-lbl").innerText=nextPlayer;
+  event.target.innerText=nextPlayer;
+        event.target.disabled="true";
+        if(nextPlayer==='X'){
+         nextPlayer="O";
+         
+         } else {nextPlayer="X";
+        }
+        document.getElementById("next-lbl").innerText=nextPlayer;
+
+    
     /*
         When the button is clicked, the space inside its square brackets is replaced by the value in the nextPlayer before switching it
     */
@@ -50,11 +55,41 @@ function takeCell(event)
     // Check if the game is over
     if (isGameOver(isGameOver(isGameOver())))
     {document.getElementById('game-over-lbl').innerText="Game Over";
+    document.getElementById("overlay").style.display = "block";
         // let the lable with the id 'game-over-lbl' display the words 'Game Over' inside <h1> element
     }
 
     // I'll leave declaring the winner for your intrinsic motivation, it's not required for this assignment 
 }
+document.getElementById("close-modal").addEventListener("click", function() {
+    document.getElementById("overlay").style.display = "none";
+})
+
+function newGame() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("gameboard").innerHTML=`<tr>
+            <td id='c1'></td>
+            <td id='c2'></td>
+            <td id='c3'></td>
+        </tr>
+        <tr>
+            <td id='c4'></td>
+            <td id='c5'></td>
+            <td id='c6'></td>
+        </tr>
+        <tr>
+            <td id='c7'></td>
+            <td id='c8'></td>
+            <td id='c9'></td>
+        </tr>`
+
+createGameBoard();
+btnArr();
+document.getElementById('game-over-lbl').innerText="";
+}
+
+document.getElementById("play-again").addEventListener("click", newGame)
+document.getElementById("reset").addEventListener("click", newGame)
 
 function isGameOver()
 {
@@ -72,3 +107,4 @@ function isGameOver()
     // This function returns true if all the buttons are disabled and false otherwise 
    return condition;
 }
+

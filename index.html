@@ -8,9 +8,12 @@
     <title>Document</title>
 </head>
 <body>
+    
     <div class="table">
         <label id='game-over-lbl'></label>
         <p class="text">Next Player:</p> <lable id='next-lbl'>  </lable>
+        <br>
+        <button id="reset"class="inline-btn">Play again?</button>
     <table id='gameboard' border="1"> 
         <tr>
             <td id='c1'></td>
@@ -30,7 +33,14 @@
     </table>
     
     </div>
-    
+    <div id="overlay">
+        <div id="modal">
+            <h2>Game over</h2>
+            <p>U suck whoever lose this, u know who u are dont even need me to make function to tell who is a winner😀</p>
+            <button id="play-again">Play again?</button>
+            <button id="close-modal">Close👋 </button>
+        </div>
+    </div>
 
     <script src='scripts.js'></script>
 </body>
